@@ -1,5 +1,4 @@
-// NodeJS Test
-
+/*
 'use strict';
 var http = require('http');
 var port = process.env.PORT || 1337;
@@ -12,4 +11,11 @@ http.createServer(function (req, res) {
             response.write(html);
             res.end('Serveur lancer ' + 'sur le port ' + res.connection.localPort + ' .');
         }).listen(port);
+}); */
+var express = require('express');
+var app = express();
+app.set('view engine', 'ejs');
+app.get('/', function (req, res) {
+    res.render('index');
 });
+app.listen(1337);
