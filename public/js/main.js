@@ -1,4 +1,6 @@
 // Récupération des blocs
+// var = variable publique let = variable priver en javascript
+
 var mainMenu = document.querySelector("#menu");
 var burgerMenu = document.querySelector("#menu-burger");
 

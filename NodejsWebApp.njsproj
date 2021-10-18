@@ -30,8 +30,20 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="contact.html" />
+    <Content Include="index.html" />
+    <Content Include="public\css\index.css" />
+    <Content Include="public\images\banner.jpg" />
+    <Content Include="public\js\main.js" />
+    <Content Include="roadmap.html" />
     <Content Include="server.js" />
     <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\js\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

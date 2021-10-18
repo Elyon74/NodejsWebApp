@@ -1,21 +1,29 @@
-/*
-'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
-var fs = require('fs');
+// fs.readFile lire un fichier, fs.writeFile ecrire un fichier
 
-http.createServer(function (req, res) {
-    fs.readFile('./index.html', null, (erreur, html) => {
-        if (erreur) {
-            res.writeHeader(200, { 'Content-Type': 'text/html' });
-            response.write(html);
-            res.end('Serveur lancer ' + 'sur le port ' + res.connection.localPort + ' .');
-        }).listen(port);
-}); */
-var express = require('express');
-var app = express();
-app.set('view engine', 'ejs');
-app.get('/', function (req, res) {
-    res.render('index');
-});
-app.listen(1337);
+let http = require('http')
+let fs = require('fs')
+let express = require('express')
+let app = express()
+
+app.use('/images', express.static('public'))
+app.use('/js', express.static('public'))
+app.use('/css', express.static('public'))
+
+let server = http.createServer()
+let port = 1337
+
+server.on('request', (request, response) => {
+    fs.readFile('index.html', (err, data) => {
+        if (err) {
+            response.writeHead(404)
+            response.end("Ce fichier n' existe pas.")
+        } else{
+            response.writeHead(200, {
+                'Content-type': 'text/html; charset=utf - 8'
+            })
+
+            response.end(data)
+        }
+    })
+})
+server.listen(port)

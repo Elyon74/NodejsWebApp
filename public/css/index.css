@@ -2,7 +2,7 @@
 * {margin:0; padding:0; font-size:1em; box-sizing:border-box;}
 a img {border:0;}
 body {font-family:'Exo', sans-serif; font-weight:300;}
-#header {background:url('images/banner.jpg') no-repeat; background-size:cover; width:100%; padding-top:17em; line-height:16em; text-align:center; position:relative;}
+#header {background:url('../images/banner.jpg') no-repeat; background-size:cover; width:100%; padding-top:17em; line-height:16em; text-align:center; position:relative;}
 
 /* Menu burger */
 #menu-burger {position:absolute; top:1.5em; right:3.5em; display:inline-block; cursor:pointer;}
