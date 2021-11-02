@@ -1,13 +1,13 @@
 {
     "name": "nodejs-web-app",
-    "version": "16.11.1",
+    "version": "16.13",
     "description": "NodejsWebApp",
     "main": "server.js",
     "author": {
         "name": "Elyon"
     },
     "dependencies": {
-        "express": "4.17.1",
+        "express": "5.0.0-alpha.8",
         "compression": "1.7.4"
     }
 }
