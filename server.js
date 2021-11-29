@@ -12,7 +12,7 @@ app.use('/css', express.static('public'))
 let server = http.createServer()
 let port = 1337
 
-server.on('request', (request, response) => {
+server.get('/', (request, response) => {
     fs.readFile('index.html', (err, data) => {
         if (err) {
             response.writeHead(404)
@@ -26,4 +26,6 @@ server.on('request', (request, response) => {
         }
     })
 })
-server.listen(port)
+server.listen(port, () => {
+    console.log('listening at http://localhost:${port}')
+}
