@@ -1,31 +1,34 @@
 // fs.readFile lire un fichier, fs.writeFile ecrire un fichier
 
-let http = require('http')
-let fs = require('fs')
-let express = require('express')
-let app = express()
+const http = require("http");
+const fs = require('fs')
+const express = require('express')
+const app = express()
 
 app.use('/images', express.static('public'))
 app.use('/js', express.static('public'))
 app.use('/css', express.static('public'))
 
-let server = http.createServer()
-let port = 1337
+const port = 3000
+const server = http.createServer(function (req, res) {
 
-server.get('/', (request, response) => {
+    // A l'arrivée d'une requête
+    res.write("Hello World!");
+    res.end()
+
     fs.readFile('index.html', (err, data) => {
         if (err) {
-            response.writeHead(404)
-            response.end("Ce fichier n' existe pas.")
-        } else{
-            response.writeHead(200, {
+            res.writeHead(404)
+            res.end("Ce fichier n' existe pas.")
+        }
+        else {
+            res.writeHead(200, {
                 'Content-type': 'text/html; charset=utf - 8'
             })
-
-            response.end(data)
+            res.end(data)
         }
     })
 })
-server.listen(port, () => {
-    console.log('listening at http://localhost:${port}')
-}
+
+// Lancer le serveur
+server.listen(port)
