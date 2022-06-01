@@ -1,6 +1,6 @@
 {
     "name": "nodejs-web-app",
-    "version": "17.2.0",
+    "version": "18.2",
     "description": "NodejsWebApp",
     "main": "server.js",
     "author": {
